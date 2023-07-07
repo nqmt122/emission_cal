@@ -3,9 +3,9 @@ import pandas as pd
 
 # Data
 fuel_lookup = {
-    'Min Tonne': [0, 1, 1.5, 2, 2.5, 3.5, 5, 7, 8, 10.9, 15, 16.5, 18, 19, 22, 28],
-    'Max Tonne': [1, 1.5, 2, 2.5, 3.5, 5, 7, 8, 10.9, 15, 16.5, 18, 19, 22, 28, 32],
-    'Average Fuel Consumption': [6.5, 7, 8, 9, 10, 11, 12, 14, 16, 24, 26, 28, 29, 29, 30, 30]
+    'min_ton': [0, 1, 1.5, 2, 2.5, 3.5, 5, 7, 8, 10.9, 15, 16.5, 18, 19, 22, 28],
+    'max_ton': [1, 1.5, 2, 2.5, 3.5, 5, 7, 8, 10.9, 15, 16.5, 18, 19, 22, 28, 32],
+    'avg_fuel': [6.5, 7, 8, 9, 10, 11, 12, 14, 16, 24, 26, 28, 29, 29, 30, 30]
 }
 
 df = pd.DataFrame(fuel_lookup)
@@ -15,9 +15,9 @@ df = pd.DataFrame(fuel_lookup)
 def co2_cal(distance, cargo_weight,truck_weight):
     #write code to filter truck_type_do_rate by truck_weight
     def get_fuel(truck):
-        mask = (truck >= df['Min Tonnes']) & (truck <= df['Max Tonnes'])
+        mask = (truck >= df['min_ton']) & (truck <= df['max_ton'])
         if mask.any():
-            return df.loc[mask, 'Average Fuel Consumption'].iloc[0]
+            return df.loc[mask, 'avg_fuel'].iloc[0]
         return None
     truck_type_do_rate = get_fuel(truck_weight)
     #cargo_do_rate
