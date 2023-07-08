@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Create an empty DataFrame to store the records
-record_df = pd.DataFrame(columns=["Start", "Destination", "Distance (km)", "Cargo Weight (kg)", "Truck Weight (kg)", "CO2 Emissions"])
+record_df = pd.DataFrame(columns=["Start", "Destination", "Distance (km)", "Cargo Weight (Tonnes)", "Truck Weight (Tonnes)", "CO2 Emissions"])
 
 # Data
 fuel_lookup = {
