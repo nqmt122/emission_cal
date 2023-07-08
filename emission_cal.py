@@ -35,7 +35,7 @@ def get_distance(start, destination):
     params = {
         "origins": start,
         "destinations": destination,
-        "key": "YOUR_GOOGLE_MAPS_API_KEY"
+        "key": "AIzaSyAkSf1b9mfiVM3E5Y2LXu3nt-rcMiXO2go"
     }
 
     response = requests.get(url, params=params)
@@ -55,8 +55,8 @@ def main():
     # Input variables
     start = st.text_input("Start Location")
     destination = st.text_input("Destination Location")
-    cargo_weight = st.number_input("Cargo Weight (in kg)", min_value=0.0, step=1.0)
-    truck_weight = st.number_input("Truck Weight (in kg)", min_value=0.0, step=1.0)
+    cargo_weight = st.number_input("Cargo Weight (in Ton)", min_value=0.0, step=1.0)
+    truck_weight = st.number_input("Truck Weight (in Ton)", min_value=0.0, step=1.0)
 
     # Calculate distance using Google Maps API
     distance = get_distance(start, destination)
