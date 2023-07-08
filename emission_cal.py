@@ -36,8 +36,8 @@ def main():
     start = st.text_input("Start Location")
     destination = st.text_input("Destination Location")
     distance = st.number_input("Distance (in km)", min_value=0.0, step=0.1)
-    cargo_weight = st.number_input("Cargo Weight (in kg)", min_value=0.0, step=1.0)
-    truck_weight = st.number_input("Truck Weight (in kg)", min_value=0.0, step=1.0)
+    cargo_weight = st.number_input("Cargo Weight (in tonnes)", min_value=0.0, step=1.0)
+    truck_weight = st.number_input("Truck Weight (in tonnnes)", min_value=0.0, step=1.0)
 
     # Calculate CO2 emissions
     co2_emissions = co2_cal(distance, cargo_weight, truck_weight)
